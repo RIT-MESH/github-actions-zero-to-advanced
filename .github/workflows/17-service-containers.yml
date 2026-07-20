@@ -28,8 +28,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Wait for Postgres
         run: |
-          for i in $(seq 1 10); do
+          for attempt in $(seq 1 10); do
             pg_isready -h localhost -p 5432 -U postgres && break
+            echo "attempt $attempt: database not ready yet"
             sleep 2
           done
           pg_isready -h localhost -p 5432 -U postgres
