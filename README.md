@@ -1,8 +1,8 @@
-﻿# GitHub Actions Zero to Advanced
+# GitHub Actions Zero to Advanced
 
 > A beginner-friendly, hands-on GitHub Actions tutorial covering CI/CD, workflows, runners, testing, Docker, security, reusable workflows, releases, deployments, and advanced automation.
 
-GitHub Actions Zero to Advanced is a beginner-friendly, hands-on learning repository covering workflow fundamentals, YAML, events, runners, automated testing, caching, artifacts, Docker, reusable workflows, security, releases, deployment approvals, and complete CI/CD pipeline design.
+GitHub Actions Zero to Advanced is a beginner-friendly, hands-on learning repository covering workflow fundamentals, YAML, events, runners, automated testing, caching, artifacts, Docker, service containers, reusable workflows, composite actions, security, releases, deployment approvals, and complete CI/CD pipeline design.
 
 ---
 
@@ -38,28 +38,29 @@ Every concept is explained from scratch, in simple English, with analogies, smal
 9. How to use artifacts, caches, matrices, outputs, and environments
 10. How to manage secrets safely
 11. How to build Docker images
-12. How to create releases
-13. How to reuse workflow logic
-14. How to secure workflows
-15. How to debug failures
-16. How to build a realistic CI/CD pipeline
+12. How to use service containers
+13. How to create releases
+14. How to reuse workflow logic (reusable workflows + composite actions)
+15. How to secure workflows
+16. How to debug failures
+17. How to build a realistic CI/CD pipeline
 
 ## Repository structure
 
 ```text
 .
 ├── .github/
-│   ├── workflows/              # Runnable example workflows (01–16)
+│   ├── workflows/              # Runnable example workflows (01–18 + 90-validation)
 │   ├── ISSUE_TEMPLATE/         # Bug report & feature request templates
 │   ├── dependabot.yml          # Dependency update automation
 │   └── pull_request_template.md
-├── lessons/                    # Progressive lessons (01–20)
+├── lessons/                    # Progressive lessons (01–22)
 ├── exercises/                  # Hands-on exercises
 ├── solutions/                  # Reference solutions
-├── quizzes/                    # Knowledge checks with answers
-├── examples/                   # Sample apps (Python + Node) and Docker
+├── examples/                   # Sample apps (Python + Node), Docker, and a composite action
 │   ├── python-app/
-│   └── node-app/
+│   ├── node-app/
+│   └── composite-action/
 ├── docs/                       # Final project, interview guide, troubleshooting, diagrams
 ├── scripts/                    # Validation helper scripts
 ├── Makefile                    # `make validate` and friends
@@ -107,6 +108,7 @@ This repository validates itself. The [`validation`](.github/workflows/90-valida
 - No cloud (AWS/Azure/GCP) account is required.
 - No paid services are required.
 - Cloud deployment examples are **simulated** and create no real resources.
+- Service containers run only on the GitHub-hosted runner for the duration of a job.
 - Workflows use minimal permissions.
 
 See [`SECURITY.md`](SECURITY.md) for details.

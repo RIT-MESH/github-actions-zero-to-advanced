@@ -1,0 +1,16 @@
+name: "Greet and report"
+description: "Prints a greeting and reports the runner OS"
+inputs:
+  who:
+    description: "Who to greet"
+    required: true
+    default: "learner"
+runs:
+  using: "composite"
+  steps:
+    - name: Greet
+      shell: bash
+      run: echo "Hello, ${{ inputs.who }}!"
+    - name: Report OS
+      shell: bash
+      run: echo "Running on ${{ runner.os }}"

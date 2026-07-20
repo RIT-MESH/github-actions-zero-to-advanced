@@ -1,0 +1,19 @@
+name: "18 - Composite Actions"
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/18-composite-actions.yml"
+      - "examples/composite-action/**"
+permissions:
+  contents: read
+jobs:
+  use-composite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Call the composite action
+        uses: ./examples/composite-action
+        with:
+          who: "GitHub Actions"

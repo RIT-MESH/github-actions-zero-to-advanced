@@ -1,4 +1,4 @@
-﻿# Exercises
+# Exercises
 
 Hands-on exercises for each lesson. Try them first, then check [`../solutions/`](../solutions/).
 
@@ -20,3 +20,5 @@ Hands-on exercises for each lesson. Try them first, then check [`../solutions/`]
 | 17 Security | [`17-security.md`](17-security.md) |
 | 18 Deployment simulation | [`18-deployment-simulation.md`](18-deployment-simulation.md) |
 | 19 Debugging | [`19-debugging.md`](19-debugging.md) |
+| 21 Service containers | [`21-service-containers.md`](21-service-containers.md) |
+| 22 Composite actions | [`22-composite-actions.md`](22-composite-actions.md) |
