@@ -1,0 +1,23 @@
+﻿name: "13 - Call Reusable Workflow"
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/13-call-reusable.yml"
+      - ".github/workflows/12-reusable-build.yml"
+permissions:
+  contents: read
+jobs:
+  call-build:
+    uses: ./.github/workflows/12-reusable-build.yml
+    with:
+      app-name: my-tutorial-app
+  use-artifact:
+    needs: call-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: reusable-build
+      - run: cat app.txt

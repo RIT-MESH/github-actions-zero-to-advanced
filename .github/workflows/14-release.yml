@@ -1,0 +1,23 @@
+﻿name: "14 - Release"
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Make release notes
+        run: |
+          echo "Automated release for tag ${{ github.ref_name }}" > notes.txt
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body_path: notes.txt
+          files: notes.txt
