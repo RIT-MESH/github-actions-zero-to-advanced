@@ -1,0 +1,26 @@
+﻿name: "04 - Environment Variables"
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/04-environment-variables.yml"
+env:
+  GLOBAL_VAR: "I am global"
+permissions:
+  contents: read
+jobs:
+  vars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Global variable
+        run: echo "$GLOBAL_VAR"
+      - name: Step variable
+        env:
+          STEP_VAR: "I am local to this step"
+        run: echo "$STEP_VAR"
+      - name: Built-in contexts
+        run: |
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "OS: ${{ runner.os }}"

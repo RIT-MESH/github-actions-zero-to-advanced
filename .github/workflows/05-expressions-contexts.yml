@@ -1,0 +1,22 @@
+﻿name: "05 - Expressions and Contexts"
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/05-expressions-contexts.yml"
+permissions:
+  contents: read
+jobs:
+  expressions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Only on main
+        if: github.ref_name == 'main'
+        run: echo "This ran because branch is main"
+      - name: Only on Linux
+        if: runner.os == 'Linux'
+        run: echo "This ran because OS is Linux"
+      - name: Always
+        if: always()
+        run: echo "I run no matter what"

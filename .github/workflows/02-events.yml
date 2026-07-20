@@ -1,0 +1,17 @@
+﻿name: "02 - Events"
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/02-events.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1"
+permissions:
+  contents: read
+jobs:
+  show-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: What started this
+        run: echo "Event is ${{ github.event_name }}"

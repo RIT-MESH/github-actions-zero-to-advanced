@@ -1,0 +1,17 @@
+﻿name: "01 - Hello World"
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/01-hello-world.yml"
+permissions:
+  contents: read
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a greeting
+        run: echo "Hello from GitHub Actions!"
+      - name: Show the runner
+        run: echo "Running on ${{ runner.os }}"
