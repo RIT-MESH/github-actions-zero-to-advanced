@@ -1,0 +1,19 @@
+title = "github-actions-zero-to-advanced gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Allow known example placeholder values used in this teaching repository"
+regexes = [
+  '''EXAMPLE_SECRET_VALUE''',
+  '''FAKE_TOKEN''',
+  '''EXAMPLE_SECRET''',
+]
+paths = [
+  '''SECURITY\.md''',
+  '''lessons/.*''',
+  '''solutions/.*''',
+  '''docs/.*''',
+  '''\.github/.*''',
+]
