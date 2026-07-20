@@ -1,0 +1,10 @@
+{
+  "name": "node-app",
+  "version": "1.0.0",
+  "description": "Sample Node app for the GitHub Actions tutorial",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
