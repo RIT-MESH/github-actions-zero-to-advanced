@@ -1,4 +1,4 @@
-﻿# Lesson 03 — YAML basics
+# Lesson 03 — YAML basics
 
 ## What is YAML?
 
@@ -136,4 +136,3 @@ Try it, then check [`solutions/03-yaml-basics.md`](../../solutions/03-yaml-basic
 2. What does `|` do in a multi-line block?
 3. True or false: YAML allows tabs for indentation.
 
-> Answers in [`quizzes/README.md`](../quizzes/README.md).

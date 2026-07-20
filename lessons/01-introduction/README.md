@@ -1,4 +1,4 @@
-﻿# Lesson 01 — Introduction to Automation
+# Lesson 01 — Introduction to Automation
 
 ## What is automation?
 
@@ -54,4 +54,3 @@ Go in order. Each lesson builds on the previous one. Do not skip the exercises �
 2. What does CI stand for, and what does it do?
 3. What is a "runner"?
 
-> Answers are in [`quizzes/README.md`](../quizzes/README.md).

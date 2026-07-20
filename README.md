@@ -54,7 +54,7 @@ Every concept is explained from scratch, in simple English, with analogies, smal
 │   ├── ISSUE_TEMPLATE/         # Bug report & feature request templates
 │   ├── dependabot.yml          # Dependency update automation
 │   └── pull_request_template.md
-├── lessons/                    # Progressive lessons (01–22)
+├── lessons/                    # Progressive lessons (01–23)
 ├── exercises/                  # Hands-on exercises
 ├── solutions/                  # Reference solutions
 ├── examples/                   # Sample apps (Python + Node), Docker, and a composite action

@@ -1,4 +1,4 @@
-﻿# Lesson 04 — GitHub Actions overview
+# Lesson 04 — GitHub Actions overview
 
 ## What is GitHub Actions?
 
@@ -85,4 +85,16 @@ Without looking, write the five core ideas of GitHub Actions from memory. Then c
 2. What does `runs-on:` decide?
 3. Name the five core ideas.
 
-> Answers in [`quizzes/README.md`](../quizzes/README.md).
+## Exact steps to watch a workflow run on GitHub
+
+1. Open the repository page on GitHub.
+2. Select the **Actions** tab near the top.
+3. In the left sidebar, select the workflow name (e.g. "01 - Hello World").
+4. If the workflow has a **Run workflow** button, click it, choose the **main** branch, then click the green **Run workflow** button.
+5. Click the newest run that appears.
+6. Click the job name to expand it.
+7. Click each step to expand its log and read the output.
+
+## Troubleshooting
+
+If a run fails, see [`docs/troubleshooting.md`](../../docs/troubleshooting.md) for a decision tree and common fixes. The most common cause of "file not found" is a missing `actions/checkout@v4` step.

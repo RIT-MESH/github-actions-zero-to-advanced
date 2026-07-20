@@ -1,4 +1,4 @@
-﻿# Lesson 18 — Deployment simulation (no real cloud)
+# Lesson 18 — Deployment simulation (no real cloud)
 
 ## What is deployment?
 
@@ -72,4 +72,16 @@ Add a `deploy-dev` job before `deploy-staging` that runs without an environment.
 2. What does `environment: production` enable?
 3. What makes a job wait for an earlier job?
 
-> Answers in [`quizzes/README.md`](../quizzes/README.md).
+## Exact steps to watch a workflow run on GitHub
+
+1. Open the repository page on GitHub.
+2. Select the **Actions** tab near the top.
+3. In the left sidebar, select the workflow name (e.g. "01 - Hello World").
+4. If the workflow has a **Run workflow** button, click it, choose the **main** branch, then click the green **Run workflow** button.
+5. Click the newest run that appears.
+6. Click the job name to expand it.
+7. Click each step to expand its log and read the output.
+
+## Troubleshooting
+
+If a run fails, see [`docs/troubleshooting.md`](../../docs/troubleshooting.md) for a decision tree and common fixes. The most common cause of "file not found" is a missing `actions/checkout@v4` step.

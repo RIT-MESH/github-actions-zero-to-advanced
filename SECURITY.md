@@ -1,4 +1,4 @@
-﻿# Security Policy
+# Security Policy
 
 ## Reporting a vulnerability
 
@@ -37,3 +37,19 @@ GitHub Actions automatically hides (masks) the value of a registered secret in l
 For this tutorial you will use **fake** secret values like `EXAMPLE_SECRET_VALUE` so nothing real is ever exposed.
 
 See [`lessons/13-environments-and-secrets/README.md`](lessons/13-environments-and-secrets/README.md) for safe, guided practice.
+
+## Pinning actions: readability vs supply-chain protection
+
+This tutorial pins actions to stable major tags (for example `actions/checkout@v4`) for readability. A major tag can move when a new minor/patch is released, which is convenient but is a weaker supply-chain guarantee.
+
+For **production** workflows, pin to an immutable commit SHA and add a comment with the version:
+
+```yaml
+uses: actions/checkout@11bd71901bbe5b1630ceea39d1f7015c8a2e2f4d # v4.2.2
+```
+
+A commit SHA cannot be changed once published, so a compromised tag cannot silently swap the code your workflow runs. The trade-off is that you must update SHAs manually (Dependabot can automate this for `actions/*` via Dependabot's `github-actions` ecosystem, which is configured in this repo).
+
+## Verifying downloaded tools
+
+When a workflow downloads a binary (for example gitleaks), verify its SHA-256 against the published checksums before executing it. This repository does that for gitleaks in the validation and capstone workflows.

@@ -1,4 +1,4 @@
-﻿# Lesson 02 — Git and GitHub for complete beginners
+# Lesson 02 — Git and GitHub for complete beginners
 
 ## What are Git and GitHub?
 
@@ -122,4 +122,3 @@ Refresh the GitHub page: your `notes.txt` file is now online.
 2. What does `git commit` do?
 3. What does `git push` do?
 
-> Answers in [`quizzes/README.md`](../quizzes/README.md).
